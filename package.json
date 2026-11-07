@@ -1,0 +1,12 @@
+{
+  "name": "pomar-aberto",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Demo website for a fictional community church: agenda, live streams, giving. All data is fictional.",
+  "scripts": {
+    "test": "node --test test/",
+    "build": "node build.mjs"
+  },
+  "license": "MIT"
+}

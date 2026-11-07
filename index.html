@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comunidade Pomar Aberto — agenda, transmissões e doações (demo)</title>
+<meta name="description" content="Site de demonstração de uma comunidade de fé fictícia: agenda semanal, transmissão ao vivo e doações. Todos os dados são fictícios.">
+<meta name="theme-color" content="#23362b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="demo-bar" role="note"><strong>Demonstração</strong> · marca, pessoas, valores e endereços são fictícios. Nenhum pagamento é processado.</div>
+
+<header class="top">
+  <a class="brand" href="#inicio" aria-label="Comunidade Pomar Aberto, início">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><circle cx="16" cy="13" r="9" fill="#b4532a"/><circle cx="11" cy="15" r="5" fill="#d98a4e"/><circle cx="21" cy="15" r="5" fill="#8a3d1d"/><rect x="15" y="18" width="2" height="12" rx="1" fill="#23362b"/></svg>
+    <span>Pomar Aberto</span>
+  </a>
+  <nav aria-label="Principal">
+    <a href="#agenda">Agenda</a>
+    <a href="#ao-vivo">Ao vivo</a>
+    <a href="#doar">Doar</a>
+    <a href="#visita">Visita</a>
+  </nav>
+</header>
+
+<main id="main">
+<section class="hero" id="inicio">
+  <div class="hero-copy">
+    <p class="eyebrow">Comunidade de fé · Curitiba (fictícia)</p>
+    <h1>Uma mesa grande,<br><em>sempre com lugar.</em></h1>
+    <p class="lead">Somos gente comum que se encontra aos domingos, divide marmitas aos sábados e reza às quartas. Venha como está.</p>
+    <div class="cta">
+      <a class="btn primary" href="#agenda">Ver a agenda</a>
+      <a class="btn ghost" href="#ao-vivo">Assistir online</a>
+    </div>
+  </div>
+  <aside class="live-card" aria-live="polite" id="hero-live">
+    <p class="chip" id="hero-chip">Próximo encontro</p>
+    <h2 id="hero-title">Carregando…</h2>
+    <p id="hero-when" class="when"></p>
+    <p id="hero-place" class="muted"></p>
+  </aside>
+  <svg class="orchard" viewBox="0 0 1200 220" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <path d="M0 170 Q300 120 600 160 T1200 140 V220 H0Z" fill="#2f4a3a"/>
+    <path d="M0 200 Q300 160 640 190 T1200 180 V220 H0Z" fill="#23362b"/>
+    <g fill="#b4532a"><circle cx="140" cy="120" r="34"/><circle cx="410" cy="132" r="28"/><circle cx="790" cy="118" r="38"/><circle cx="1040" cy="128" r="30"/></g>
+    <g fill="#d98a4e"><circle cx="124" cy="132" r="22"/><circle cx="396" cy="140" r="18"/><circle cx="776" cy="130" r="24"/><circle cx="1028" cy="138" r="19"/></g>
+    <g fill="#f5efe4"><rect x="138" y="140" width="4" height="40"/><rect x="408" y="148" width="4" height="34"/><rect x="788" y="140" width="4" height="40"/><rect x="1038" y="144" width="4" height="34"/></g>
+  </svg>
+</section>
+
+<section class="sec" id="agenda" aria-labelledby="h-agenda">
+  <div class="sec-head">
+    <p class="eyebrow">Próximos 30 dias</p>
+    <h2 id="h-agenda">Agenda</h2>
+  </div>
+  <div class="filters" role="group" aria-label="Filtrar por tipo" id="filters"></div>
+  <ol class="agenda" id="agenda-list"></ol>
+  <button class="btn ghost more" id="more" type="button">Mostrar mais</button>
+</section>
+
+<section class="sec dark" id="ao-vivo" aria-labelledby="h-live">
+  <div class="sec-head">
+    <p class="eyebrow">Transmissões</p>
+    <h2 id="h-live">Ao vivo e gravações</h2>
+  </div>
+  <div class="live-grid">
+    <div class="player" id="player">
+      <div class="screen" role="img" aria-label="Pré-visualização do vídeo da transmissão (ilustração)">
+        <svg viewBox="0 0 640 360" aria-hidden="true" focusable="false"><rect width="640" height="360" fill="#1b2a22"/><path d="M0 250 Q160 200 320 240 T640 220 V360 H0Z" fill="#2f4a3a"/><circle cx="320" cy="140" r="64" fill="#b4532a"/><circle cx="288" cy="156" r="36" fill="#d98a4e"/><rect x="316" y="190" width="8" height="90" fill="#f5efe4"/></svg>
+        <span class="badge" id="live-badge">Aguardando</span>
+        <button class="play" type="button" id="play" aria-label="Reproduzir (demonstração)"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button>
+      </div>
+      <div class="player-info">
+        <h3 id="live-title"></h3>
+        <p class="muted" id="live-sub"></p>
+        <p class="note" id="live-note" hidden>Demonstração: aqui entraria o player da transmissão real.</p>
+      </div>
+    </div>
+    <div class="recs">
+      <h3>Gravações recentes</h3>
+      <ul id="recs"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="doar" aria-labelledby="h-doar">
+  <div class="sec-head">
+    <p class="eyebrow">Generosidade</p>
+    <h2 id="h-doar">Doar</h2>
+    <p class="lead small">Tudo o que chega sustenta a cozinha, o telhado e as bolsas. Prestamos contas todo trimestre.</p>
+  </div>
+  <div class="give-grid">
+    <form id="give" class="card" novalidate>
+      <fieldset>
+        <legend>Frequência</legend>
+        <div class="seg" id="freq"></div>
+      </fieldset>
+      <fieldset>
+        <legend>Valor</legend>
+        <div class="chips" id="amounts"></div>
+        <label class="field">
+          <span>Outro valor</span>
+          <input id="amount" inputmode="decimal" autocomplete="off" placeholder="R$ 0,00" aria-describedby="e-amount">
+          <small class="err" id="e-amount" role="alert"></small>
+        </label>
+      </fieldset>
+      <label class="field">
+        <span>Destino</span>
+        <select id="fund"></select>
+        <small class="err" id="e-fund" role="alert"></small>
+      </label>
+      <div class="two">
+        <label class="field"><span>Nome</span><input id="name" autocomplete="name"><small class="err" id="e-name" role="alert"></small></label>
+        <label class="field"><span>E-mail</span><input id="email" type="email" autocomplete="email"><small class="err" id="e-email" role="alert"></small></label>
+      </div>
+      <label class="check"><input type="checkbox" id="cover"> <span>Cobrir as taxas (<b id="cover-val"></b>) para que o valor chegue inteiro.</span></label>
+      <button class="btn primary wide" type="submit" id="submit">Doar</button>
+      <p class="fine">Demonstração: nenhum dado é enviado ou guardado.</p>
+    </form>
+    <aside class="card summary" aria-live="polite">
+      <h3>Resumo</h3>
+      <dl>
+        <div><dt>Destino</dt><dd id="s-fund"></dd></div>
+        <div><dt>Frequência</dt><dd id="s-freq"></dd></div>
+        <div><dt>Taxas</dt><dd id="s-fee"></dd></div>
+        <div class="total"><dt>Total</dt><dd id="s-total"></dd></div>
+      </dl>
+      <div class="goal">
+        <p><b>Reforma do telhado</b> <span class="muted">meta fictícia</span></p>
+        <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" aria-label="Meta da reforma do telhado"><i style="width:64%"></i></div>
+        <p class="muted">R$ 38.400 de R$ 60.000</p>
+      </div>
+    </aside>
+  </div>
+  <div class="thanks" id="thanks" role="dialog" aria-modal="true" aria-labelledby="t-title" hidden>
+    <div class="thanks-box">
+      <h3 id="t-title">Gratidão, <span id="t-name"></span>.</h3>
+      <p id="t-text"></p>
+      <p class="code">Recibo de demonstração <b id="t-code"></b></p>
+      <button class="btn primary" type="button" id="t-close">Fechar</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="visita" aria-labelledby="h-visita">
+  <div class="sec-head">
+    <p class="eyebrow">Primeira vez?</p>
+    <h2 id="h-visita">Visita</h2>
+  </div>
+  <div class="visit-grid">
+    <article><h3>O que esperar</h3><p>Setenta e cinco minutos, música ao vivo, uma leitura curta e um café depois. Ninguém pede nada nem chama você ao palco.</p></article>
+    <article><h3>Crianças</h3><p>A Ciranda recebe de 3 a 10 anos com equipe treinada e lista de presença. Berçário aberto durante o culto.</p></article>
+    <article><h3>Acessibilidade</h3><p>Entrada sem degraus, banheiro adaptado, tradução em Libras no culto das 10h e legendas na transmissão.</p></article>
+    <article><h3>Onde fica</h3><p>Rua das Figueiras, 123 (endereço fictício)<br>Bairro Pomar, Curitiba · Estacionamento no pátio.</p></article>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <p><strong>Comunidade Pomar Aberto</strong> — projeto de demonstração. Marca, pessoas, valores e endereço fictícios.</p>
+  <p class="muted">Código aberto em <a href="https://github.com/alissonlittig/pomar-aberto">github.com/alissonlittig/pomar-aberto</a></p>
+</footer>
+
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
